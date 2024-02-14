@@ -1,0 +1,2 @@
+airflow-hop-plugin @ git+https://github.com/pauloricardoferreira/airflow-hop-plugin.git
+connexion[swagger-ui]
