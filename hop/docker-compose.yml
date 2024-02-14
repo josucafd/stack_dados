@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  hop-server:
+    # image: apache/hop:2.7.0
+    build: ./docker
+    container_name: hop-server
+    env_file:
+      - .env
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - "../projetos:/opt/projetos/"
+      # - "logs_hop:/opt/logs_hop"
+      # - "oracle_lib:/opt/hop/plugins/databases/oracle/lib"
+      # - "firebird_lib:/opt/hop/plugins/databases/firebird/lib"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+    ports:
+      - "8182:8080"
