@@ -88,3 +88,32 @@ Há dois scripts que preparam o ambiente.
 **definicoes.sh** -> Editar conforme a necessidade para automatizar a criação de diretórios e arquivos que são utilizatos pelo projeto.
 
 **repositorios_git.sh** -> Editar conforme a necessidade para automatizar o clone dos repositórios com os artefatos utilizados pelo projeto.
+
+
+### Extras
+
+Em breve, vou adicionar ferramentas como:
+
+- [Minio](https://min.io/) -> Storage com Protocolo S3
+- [Dremio](https://www.dremio.com/) -> SQL Engine para otimizar consultas SQL
+- [Airbyte](https://airbyte.com/) -> Orquestrador
+- [Dagster](https://dagster.io/ ) -> Orquestrador
+- [mage](https://www.mage.ai/) -> Orquestrador
+- [dtb](https://www.getdbt.com/) -> Integração e Tranformação de Dados
+- [Apache Superset](https://superset.apache.org/) Superset -> DataViz
+- [OpenMetadata](https://open-metadata.org/) -> Catalogo de Dados
+
+<br>
+Avaliar
+
+- [Apache Doris](https://doris.apache.org/) - Banco de dados Real-Time
+- [Apache Kylin](https://kylin.apache.org/) - Banco de dados Real-Time
+- [Apache Druid](https://druid.apache.org/) - Banco de dados Real-Time
+- [Dezebium](https://debezium.io/) -> Monitora mudanças no banco de dados a nível de linha
+- [Trino](https://trino.io/) -> SQL Engine para otimizar consultas SQL 
+- [Apache Kafka](https://kafka.apache.org/) -> Mensageria
+- [Apache Spark](https://spark.apache.org/) -> Engine de processamento de alto volume de dados
+- [Kubernets](https://kubernetes.io/pt-br/) -> Orquestrador de Containers
+- [Git](https://git-scm.com/doc) -> Versionamento de Códigos
+
+.... Ufa ....
