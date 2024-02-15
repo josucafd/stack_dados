@@ -1,14 +1,18 @@
-Documentação Oficial
+# Apache Airflow
 
-https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html#setting-the-right-airflow-user
+Para uma Stack de dados é necessário uma ferramenta para Orquestrar seus pipelines.
 
-antes de iniciar, é necessário seguir os passos abaixo conforme documentação
+Neste caso utilizaremos o **Apache Airflow** como solução de Orquestração.
 
-criar as referidas pastas
-mkdir -p ./dags ./logs ./plugins ./config
+O Apache Airflow é bem mais que um Orquestrador, é uma poderosa ferramente de Pipeline de Dados, con inumeras integrações;
 
-cria o arquivo .env com a variavel AIRFLOW_UID com o mesmo valor do ID do usuário local 
-echo -e "AIRFLOW_UID=$(id -u)" > .env
+<br>
 
-O intervalo padrão do Scheduller para ler as pasta DAGS é de 300s ou 5 Minutos
-dag_dir_list_interval 
+[Documentação Apache Airflow](https://airflow.apache.org/)
+
+
+### Observações
+
+As Dags leva um tempo para serem ligas.
+
+O tempo padrão é de 300s ou 5 Minutos, más pode ser alterado o parametro **dag_dir_list_interval** no no arquivo airflow.cfg
