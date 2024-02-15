@@ -14,6 +14,8 @@ Este repositório, tem como objetivo, reunir algumas das principais tecnologias 
 
 - [Docker](https://docs.docker.com/) - Infra
 
+- [Docker Hub](https://hub.docker.com/) - Repositório de Imagens
+
 <br>
 
 **Em breve Mais Projetos**
