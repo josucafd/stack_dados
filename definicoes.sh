@@ -20,4 +20,4 @@ echo  "\n"
 
 echo "==== Criandas pastas para o Hop ===="
 
-mkdir projetos
+mkdir -p projetos
