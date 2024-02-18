@@ -2,6 +2,8 @@ FROM apache/hop:2.7.0
 
 USER root
 
+RUN apk add --no-cache git
+
 RUN chown -R hop:hop /opt
 
 USER hop
