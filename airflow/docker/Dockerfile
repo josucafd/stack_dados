@@ -8,6 +8,8 @@ RUN apt-get update \
   && apt-get autoremove -yqq --purge \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
+
+RUN chown -R airflow /opt
   
 USER airflow
 
