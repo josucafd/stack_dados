@@ -31,7 +31,7 @@ if [ -d "projetos/hop_config" ]
         git pull
     else 
         echo "==== Atualizando Repositórios Configuração do Hop ===="
-        git clone https://github.com/pauloricardoferreira/live_hop_config.git projetos/hop_config
+        git clone https://github.com/josucafd/hop_config.git projetos/hop_config
 fi
 
 echo  "\n"
@@ -46,5 +46,5 @@ if [ -d "projetos/live_hop" ]
         git pull
     else 
         echo "==== Atualizando Repositórios Artefatos do Hop ===="
-        git clone https://github.com/pauloricardoferreira/live_hop.git projetos/live_hop
+        git clone https://github.com/josucafd/jslavanderia.git projetos/jslavanderia
 fi
