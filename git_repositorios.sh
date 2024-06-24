@@ -4,47 +4,45 @@ echo "==============================="
 echo "==== Clonando Repositórios ===="
 echo "==============================="
 
-echo  "\n"
+echo -e "\n"
 
-# pasta_atual=$(pwd)
+# Salva o diretório atual
+pasta_atual=$(pwd)
 
-# if [ -d "airflow/dags/airflow_dags" ]
-#     then
-#         echo "==== Clonando Dags Airflow ===="
-#         cd  airflow/dags/airflow_dags
-#         git reset --hard
-#         git pull
-#     else 
-#         echo "==== Atualizando Repositório Dags Airflow ===="
-#         git clone https://github.com/pauloricardoferreira/live_airflow_dags.git airflow/dags/airflow_dags
-# fi
+# Função para clonar ou atualizar um repositório
+clone_or_update_repo() {
+    local repo_url=$1
+    local repo_dir=$2
+    local repo_name=$3
 
-# echo  "\n"
+    echo "==== Processando $repo_name ===="
 
-cd $pasta_atual
+    if [ -d "$repo_dir" ]; then
+        if [ -d "$repo_dir/.git" ]; then
+            echo "Diretório $repo_dir existe e é um repositório Git. Atualizando..."
+            cd "$repo_dir"
+            git reset --hard
+            git pull
+        else
+            echo "Erro: $repo_dir já existe e não é um repositório Git."
+        fi
+    else
+        echo "Diretório $repo_dir não existe. Clonando repositório..."
+        git clone "$repo_url" "$repo_dir"
+    fi
 
-if [ -d "projetos/hop_config" ]
-    then
-        echo "==== Clonando Repositório Configuração do Hop ===="
-        cd  projetos/hop_config
-        git reset --hard
-        git pull
-    else 
-        echo "==== Atualizando Repositórios Configuração do Hop ===="
-        git clone https://github.com/josucafd/hop_config.git projetos/hop_config
-fi
+    echo -e "\n"
 
-echo  "\n"
+    # Retorna ao diretório original
+    cd "$pasta_atual"
+}
 
-cd $pasta_atual
+# Clonando ou atualizando Repositório Configuração do Hop
+clone_or_update_repo "https://github.com/josucafd/hop_config.git" "projetos/hop_config" "Configuração do Hop"
 
-if [ -d "projetos/live_hop" ]
-    then
-        echo "==== Clonando Repositório JS Lavanderia ===="
-        cd  projetos/jslavanderia
-        git reset --hard
-        git pull
-    else 
-        echo "==== Atualizando Repositórios Artefatos do Hop ===="
-        git clone https://github.com/josucafd/jslavanderia.git projetos/jslavanderia
-fi
+# Clonando ou atualizando Repositório JS Lavanderia
+clone_or_update_repo "https://github.com/josucafd/jslavanderia.git" "projetos/jslavanderia" "JS Lavanderia"
+
+echo "==============================="
+echo "==== Processo Concluído ======="
+echo "==============================="
