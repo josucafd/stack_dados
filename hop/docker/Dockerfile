@@ -12,14 +12,6 @@ RUN apk add --no-cache git
 # Cria diretórios necessários para o Apache Hop
 RUN mkdir -p /opt/projetos/hop_config /opt/projetos/hop_jdbc
 
-# Cria diretórios necessários para o Apache Hop
-RUN mkdir -p /opt/projetos /opt/hop/plugins/databases/oracle/lib /opt/hop/plugins/databases/firebird/lib
-
-# Não precisa mudar de usuário, já que o restante das operações podem ser feitas como usuário `hop`
-
-# Baixa e instala o driver Oracle
-RUN wget -q http://nexus.saas.hand-china.com/content/repositories/rdc/com/oracle/ojdbc7/12.1.0.2/ojdbc7-12.1.0.2.jar -O /opt/hop/plugins/databases/oracle/lib/ojdbc7-12.1.0.2.jar
-
 # Baixa e instala o driver Firebird
 RUN wget -q https://github.com/FirebirdSQL/jaybird/releases/download/v5.0.3/jaybird-5.0.3.java11.zip -O /tmp/jaybird.zip \
     && unzip /tmp/jaybird.zip -d /tmp/jaybird \
