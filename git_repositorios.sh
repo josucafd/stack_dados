@@ -40,8 +40,8 @@ cd $pasta_atual
 
 if [ -d "projetos/live_hop" ]
     then
-        echo "==== Clonando Repositório Artefatos do Hop ===="
-        cd  projetos/live_hop
+        echo "==== Clonando Repositório JS Lavanderia ===="
+        cd  projetos/jslavanderia
         git reset --hard
         git pull
     else 
