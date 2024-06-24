@@ -10,6 +10,9 @@ USER root
 RUN apk add --no-cache git
 
 # Cria diretórios necessários para o Apache Hop
+RUN mkdir -p /opt/projetos/hop_config /opt/projetos/hop_jdbc
+
+# Cria diretórios necessários para o Apache Hop
 RUN mkdir -p /opt/projetos /opt/hop/plugins/databases/oracle/lib /opt/hop/plugins/databases/firebird/lib
 
 # Não precisa mudar de usuário, já que o restante das operações podem ser feitas como usuário `hop`
@@ -22,6 +25,10 @@ RUN wget -q https://github.com/FirebirdSQL/jaybird/releases/download/v5.0.3/jayb
     && unzip /tmp/jaybird.zip -d /tmp/jaybird \
     && cp /tmp/jaybird/jaybird-5.0.3.java11.jar /opt/hop/plugins/databases/firebird/lib/ \
     && rm -rf /tmp/jaybird.*
+
+# Define variáveis de ambiente para os diretórios de configuração e drivers JDBC
+ENV HOP_CONFIG_FOLDER=/opt/projetos/hop_config
+ENV HOP_SHARED_JDBC_FOLDER=/opt/projetos/hop_jdbc
 
 # Volta para o usuário hop
 USER hop
