@@ -3,15 +3,15 @@ version: '3.5'
 services:
   hop-server:
     build:
-      context: ./docker  # Caminho para o diretório que contém o Dockerfile
-      dockerfile: Dockerfile  # Nome do Dockerfile
+      context: ./docker
+      dockerfile: Dockerfile
     container_name: hop-server
     env_file:
       - .env
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - "/home/js/stack_dados/projetos:/opt/projetos"
+      - "/home/js/stack_dados/projetos:/opt/projetos:rw"  # Certifique-se de usar "rw" para leitura e escrita
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: always
