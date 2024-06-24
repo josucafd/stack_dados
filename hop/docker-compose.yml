@@ -11,7 +11,7 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - "/home/js/stack_dados/projetos:/opt/projetos:rw"  # Certifique-se de usar "rw" para leitura e escrita
+      - "/home/js/stack_dados/projetos:/opt/projetos:rw"
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: always
@@ -25,6 +25,7 @@ services:
     volumes:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker  # Mapeando o binário Docker
     ports:
       - "8081:8080"
       - "50000:50000"
