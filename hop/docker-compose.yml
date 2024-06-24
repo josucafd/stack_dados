@@ -3,8 +3,7 @@ version: '3.5'
 services:
   hop-server:
     build:
-      context: ./docker/hop
-      dockerfile: Dockerfile
+      build: ./docker
     container_name: hop-server
     env_file:
       - .env
