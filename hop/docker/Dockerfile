@@ -1,4 +1,4 @@
-FROM apache/hop:2.7.0
+FROM apache/hop:2.8.0
 
 USER root
 

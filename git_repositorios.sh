@@ -6,20 +6,20 @@ echo "==============================="
 
 echo  "\n"
 
-pasta_atual=$(pwd)
+# pasta_atual=$(pwd)
 
-if [ -d "airflow/dags/airflow_dags" ]
-    then
-        echo "==== Clonando Dags Airflow ===="
-        cd  airflow/dags/airflow_dags
-        git reset --hard
-        git pull
-    else 
-        echo "==== Atualizando Repositório Dags Airflow ===="
-        git clone https://github.com/pauloricardoferreira/live_airflow_dags.git airflow/dags/airflow_dags
-fi
+# if [ -d "airflow/dags/airflow_dags" ]
+#     then
+#         echo "==== Clonando Dags Airflow ===="
+#         cd  airflow/dags/airflow_dags
+#         git reset --hard
+#         git pull
+#     else 
+#         echo "==== Atualizando Repositório Dags Airflow ===="
+#         git clone https://github.com/pauloricardoferreira/live_airflow_dags.git airflow/dags/airflow_dags
+# fi
 
-echo  "\n"
+# echo  "\n"
 
 cd $pasta_atual
 
