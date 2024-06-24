@@ -1,14 +1,14 @@
 # Usa a imagem base Apache Hop versão 2.8.0
 FROM apache/hop:2.8.0
 
-# Muda para o usuário root para instalar dependências e configurar permissões
+# Muda para o usuário root para instalar dependências
 USER root
 
 # Instala o Git
 RUN apk add --no-cache git
 
 # Altera a propriedade do diretório /opt para o usuário hop e grupo hop
-RUN chown -R hop:hop /opt/projetos
+RUN mkdir -p /opt/projetos && chown -R hop:hop /opt/projetos
 
 # Volta para o usuário hop
 USER hop

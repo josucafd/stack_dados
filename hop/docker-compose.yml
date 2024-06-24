@@ -3,7 +3,8 @@ version: '3.5'
 services:
   hop-server:
     build:
-      build: ./docker
+      context: ./docker  # Caminho para o diretório que contém o Dockerfile
+      dockerfile: Dockerfile  # Nome do Dockerfile
     container_name: hop-server
     env_file:
       - .env
