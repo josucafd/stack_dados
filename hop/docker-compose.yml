@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   hop-server:
-    image: apache/hop:2.8.0
+    build: ./docker
     container_name: hop-server
     env_file:
       - .env
